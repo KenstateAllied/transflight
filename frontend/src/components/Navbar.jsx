@@ -37,38 +37,15 @@ const Navbar = () => {
                 <div className="grid grid-cols-5 gap-6">
                   {/* India */}
                   <div>
-                    <h4 className="font-semibold mb-2 text-red-600">India</h4>
+                    <h4 className="font-semibold mb-2 text-red-600">Top Study Destinations</h4>
                     <ul className="space-y-1 text-sm">
-                      <li>Kerala</li>
-                      <li>Gujarat</li>
-                      <li>Leh</li>
-                      <li>Himachal</li>
-                      <li>Uttarakhand</li>
-                      <li>Rajasthan</li>
-                      <li>Kashmir</li>
-                      <li>Goa</li>
-                      <li>Sikkim</li>
-                      <li>Andaman</li>
-                    </ul>
-                  </div>
-                  {/* Asia */}
-                  <div>
-                    <h4 className="font-semibold mb-2 text-red-600">Asia</h4>
-                    <ul className="space-y-1 text-sm">
-                      <li>Vietnam</li>
-                      <li>Bali</li>
-                      <li>Singapore</li>
-                      <li>Malaysia</li>
-                      <li>Thailand</li>
-                      <li>Maldives</li>
-                      <li>Sri Lanka</li>
-                    </ul>
-                  </div>
-                  {/* Europe */}
-                  <div>
-                    <h4 className="font-semibold mb-2 text-red-600">Europe</h4>
-                    <ul className="space-y-1 text-sm">
-                      <li>France</li>
+                       <li>Australia</li>
+                      <li>UK</li>
+                      <li>Canada</li>
+                      <li>USA</li>
+                      <li>Ireland</li>
+                      <li>China</li>
+                       <li>France</li>
                       <li>Italy</li>
                       <li>Germany</li>
                       <li>Switzerland</li>
@@ -76,9 +53,9 @@ const Navbar = () => {
                       <li>Turkey</li>
                     </ul>
                   </div>
-                  {/* Middle East */}
+                  {/* Asia */}
                   <div>
-                    <h4 className="font-semibold mb-2 text-red-600">Middle East</h4>
+                    <h4 className="font-semibold mb-2 text-red-600">Top Unskilled Destinations</h4>
                     <ul className="space-y-1 text-sm">
                       <li>Dubai</li>
                       <li>Israel - Jordan</li>
@@ -87,17 +64,28 @@ const Navbar = () => {
                       <li>Uzbekistan</li>
                     </ul>
                   </div>
-                  {/* Other Regions */}
+                  {/* Europe */}
                   <div>
-                    <h4 className="font-semibold mb-2 text-red-600">Other Regions</h4>
+                    <h4 className="font-semibold mb-2 text-red-600">Top skilled Destinations</h4>
                     <ul className="space-y-1 text-sm">
-                      <li>USA</li>
                       <li>Australia</li>
-                      <li>New Zealand</li>
-                      <li>South Africa</li>
-                      <li>Mauritius</li>
+                      <li>UK</li>
+                      <li>Canada</li>
+                      <li>USA</li>
+                      <li>Ireland</li>
+                      <li>China</li>
+                       <li>France</li>
+                      <li>Italy</li>
+                      <li>Germany</li>
+                      <li>Switzerland</li>
+                      <li>Greece</li>
+                      <li>Turkey</li>
                     </ul>
                   </div>
+                  {/* Middle East */}
+
+                  {/* Other Regions */}
+                
                 </div>
               </div>
             )}
