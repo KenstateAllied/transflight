@@ -45,7 +45,7 @@ const handleSubmit = async (e) => {
         </button>
 
         <h2 className="text-xl font-semibold text-center mb-4 text-gray-800">
-          Are you a Resident of Uasin Gishu? Register and find your opportunity!
+          Resident of Uasin Gishu? Register Now!
         </h2>
         <p className="text-sm text-gray-600 text-center mb-6">
           Enter your name, ID number, ward and phone number so we can assist you better.
