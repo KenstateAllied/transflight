@@ -2,7 +2,13 @@ import{ useState } from 'react';
 
 const PopupForm = ({ show , onClose }) => {
   const [name, setName] = useState('');
+  const [id, setID] = useState('');
+  const [prof, setProf] = useState('');
+  const [level, setLevel] = useState('');
+  const [exp, setExp] = useState('');
+  const [ward, setWard] = useState('');
   const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -13,7 +19,7 @@ const handleSubmit = async (e) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ name, phone }),
+      body: JSON.stringify({ name, id, prof, level, exp, ward,  phone, email }),
     });
 
     if (res.ok) {
@@ -48,7 +54,7 @@ const handleSubmit = async (e) => {
           Resident of Uasin Gishu? Register Now!
         </h2>
         <p className="text-sm text-gray-600 text-center mb-6">
-          Enter your name, ID number, ward and phone number so we can assist you better.
+          Enter your name, ID number, Profession, Education Level, Years Experience, Ward, Tel and Email so we can assist you better.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -62,32 +68,49 @@ const handleSubmit = async (e) => {
           />
 
            <input
-            type="tel"
+            type="int"
             placeholder="Your ID Number"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            value={id}
+            onChange={(e) => setID(e.target.value)}
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
           />
           <input
-            type="tel"
+            type="text"
             placeholder="Your Profession"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            value={prof}
+            onChange={(e) => setProf(e.target.value)}
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
           />
           <input
-            type="tel"
+            type="text"
             placeholder="Your Higest Level of Education"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            value={level}
+            onChange={(e) => setLevel(e.target.value)}
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
           />
           <input
-            type="tel"
+            type="text"
             placeholder="Years of Experience in your Profession"
+            value={exp}
+            onChange={(e) => setExp(e.target.value)}
+            required
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+          />
+          <input
+            type="text"
+            placeholder="Your Ward"
+            value={ward}
+            onChange={(e) => setWard(e.target.value)}
+            required
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+          />
+          
+          <input
+            type="int"
+            placeholder="Your Phone Number"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             required
@@ -95,18 +118,9 @@ const handleSubmit = async (e) => {
           />
           <input
             type="text"
-            placeholder="Your Ward"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-          />
-          
-          <input
-            type="tel"
-            placeholder="Your Phone Number"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
           />
