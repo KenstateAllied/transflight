@@ -1,4 +1,7 @@
 import{ useState } from 'react';
+import PropTypes from 'prop-types';
+
+
 
 const PopupForm = ({ show , onClose }) => {
   const [name, setName] = useState('');
@@ -23,11 +26,13 @@ const handleSubmit = async (e) => {
     });
 
     if (res.ok) {
-      alert("✅ Submitted successfully ! We'll get back to you soon.");
+      alert("✅ Submitted successfully ! Thank you for registering with us. We'll get back once we match you with an opportunity.");
       onClose();
     } else {
       alert("❌ Submission failed.");
       console.log(res);
+      console.log("API BASE:", import.meta.env.VITE_API_BASE_URL);
+
     }
   } catch (error) {
     console.error("Submission error:", error);
@@ -68,7 +73,7 @@ const handleSubmit = async (e) => {
           />
 
            <input
-            type="int"
+            type="number"
             placeholder="Your ID Number"
             value={id}
             onChange={(e) => setID(e.target.value)}
@@ -92,7 +97,7 @@ const handleSubmit = async (e) => {
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
           />
           <input
-            type="text"
+            type="number"
             placeholder="Years of Experience in your Profession"
             value={exp}
             onChange={(e) => setExp(e.target.value)}
@@ -109,7 +114,7 @@ const handleSubmit = async (e) => {
           />
           
           <input
-            type="int"
+            type="number"
             placeholder="Your Phone Number"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
@@ -117,7 +122,7 @@ const handleSubmit = async (e) => {
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
           />
           <input
-            type="text"
+            type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -135,5 +140,11 @@ const handleSubmit = async (e) => {
     </div>
   );
 };
+
+PopupForm.propTypes = {
+  show: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
+
 
 export default PopupForm;
