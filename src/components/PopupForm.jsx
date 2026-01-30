@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 
 const PopupForm = ({ show , onClose }) => {
   const [name, setName] = useState('');
-  const [id, setID] = useState('');
-  const [prof, setProf] = useState('');
-  const [level, setLevel] = useState('');
-  const [exp, setExp] = useState('');
-  const [ward, setWard] = useState('');
-  const [phone, setPhone] = useState('');
+  const [reg, setReg] = useState('');
+  const [field, setField] = useState('');
+  const [location, setLocation] = useState('');
+  const [tel, setTel] = useState('');
   const [email, setEmail] = useState('');
+  const [website, setWebsite] = useState('');
+  const [app, setApp] = useState('');
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -22,11 +22,11 @@ const handleSubmit = async (e) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ name, id, prof, level, exp, ward,  phone, email }),
+      body: JSON.stringify({ name, reg, field, location, tel, email, website, app }),
     });
 
     if (res.ok) {
-      alert("✅ Submitted successfully ! Thank you for registering with us. We'll get back once we match you with an opportunity.");
+      alert("✅ Submitted successfully ! Thank you for registering with us.");
       onClose();
     } else {
       alert("❌ Submission failed.");
@@ -56,16 +56,16 @@ const handleSubmit = async (e) => {
         </button>
 
         <h2 className="text-xl font-semibold text-center mb-4 text-gray-800">
-          Resident of Uasin Gishu? Register Now!
+          Kenyan Companies - prospective for Web Development
         </h2>
         <p className="text-sm text-gray-600 text-center mb-6">
-          Enter your name, ID number, Profession, Education Level, Years Experience, Ward, Tel and Email so we can assist you better.
+          Company Name, Company Reg Number, Field, Location, Tel, Email, Website and App
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
-            placeholder="Your Name"
+            placeholder="Company Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
@@ -74,58 +74,58 @@ const handleSubmit = async (e) => {
 
            <input
             type="number"
-            placeholder="Your ID Number"
-            value={id}
-            onChange={(e) => setID(e.target.value)}
+            placeholder="Company Reg Number"
+            value={reg}
+            onChange={(e) => setReg(e.target.value)}
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
           />
           <input
             type="text"
-            placeholder="Your Profession"
-            value={prof}
-            onChange={(e) => setProf(e.target.value)}
+            placeholder="Company Field"
+            value={field}
+            onChange={(e) => setField(e.target.value)}
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
           />
           <input
             type="text"
-            placeholder="Your Higest Level of Education"
-            value={level}
-            onChange={(e) => setLevel(e.target.value)}
+            placeholder="Location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
           />
           <input
-            type="number"
-            placeholder="Years of Experience in your Profession"
-            value={exp}
-            onChange={(e) => setExp(e.target.value)}
+            type="tel"
+            placeholder="Telephone"
+            value={tel}
+            onChange={(e) => setTel(e.target.value)}
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
           />
           <input
             type="text"
-            placeholder="Your Ward"
-            value={ward}
-            onChange={(e) => setWard(e.target.value)}
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
           />
           
           <input
-            type="number"
-            placeholder="Your Phone Number"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            type="text"
+            placeholder="Does it have a Website?"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
           />
           <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            placeholder="Does it have an App?"
+            value={app}
+            onChange={(e) => setApp(e.target.value)}
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
           />
